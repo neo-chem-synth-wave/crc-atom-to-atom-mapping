@@ -8,8 +8,11 @@ from typing import Collection, List, Optional, Tuple
 from pqdm.processes import pqdm
 
 
-class EpamIndigoAtomToAtomMapping:
-    """ The `EPAM Indigo <https://lifescience.opensource.epam.com/indigo>`_ chemical reaction compound atom-to-atom mapping class. """
+class EpamIndigoAtomToAtomMappingUtilities:
+    """
+    The `EPAM Indigo <https://lifescience.opensource.epam.com/indigo>`_ library chemical reaction compound atom-to-atom
+    mapping utilities class.
+    """
 
     @staticmethod
     def map_reaction_smiles(
@@ -30,20 +33,24 @@ class EpamIndigoAtomToAtomMapping:
 
         :parameter reaction_smiles: The chemical reaction SMILES string.
         :parameter timeout_period_ms: The maximum amount of time in milliseconds that may be spent on the chemical
-            reaction compound atom-to-atom mapping procedure.
+            reaction compound atom-to-atom mapping.
         :parameter handle_existing_atom_to_atom_mapping: The indicator of how the existing chemical reaction compound
             atom-to-atom mapping should be handled. The exclusive value choices are: { ``"alter"``, ``"clear"``,
             ``"discard"``, ``"keep"`` }.
-        :parameter ignore_charges: The indicator of whether the chemical reaction compound atom charges should be ignored.
-        :parameter ignore_isotopes: The indicator of whether the chemical reaction compound atom isotopes should be ignored.
-        :parameter ignore_valences: The indicator of whether the chemical reaction compound atom valences should be ignored.
-        :parameter ignore_radicals: The indicator of whether the chemical reaction compound atom radicals should be ignored.
+        :parameter ignore_charges: The indicator of whether the chemical reaction compound atom charges should be
+            ignored.
+        :parameter ignore_isotopes: The indicator of whether the chemical reaction compound atom isotopes should be
+            ignored.
+        :parameter ignore_valences: The indicator of whether the chemical reaction compound atom valences should be
+            ignored.
+        :parameter ignore_radicals: The indicator of whether the chemical reaction compound atom radicals should be
+            ignored.
         :parameter canonicalize_reaction_smiles: The indicator of whether the chemical reaction SMILES string should be
             canonicalized.
         :parameter custom_logger: The custom logger.
 
         :returns: The mapped chemical reaction SMILES string, and the indicator of whether the chemical reaction
-            compound atom-to-atom mapping procedure was completed without errors.
+            compound atom-to-atom mapping was completed without errors.
         """
 
         try:
@@ -96,22 +103,24 @@ class EpamIndigoAtomToAtomMapping:
 
         :parameter reaction_smiles_strings: The chemical reaction SMILES strings.
         :parameter number_of_cpu_cores: The number of CPU cores that should be utilized.
-        :parameter kwargs: The keyword arguments dictionary for the adjustment of the following underlying methods: {
-            ``crc_a2am.epam_indigo.atom_to_atom_mapping.EpamIndigoAtomToAtomMapping.map_reaction_smiles`` }.
+        :parameter kwargs: The keyword arguments for the adjustment of the following underlying methods: {
+            ``crc_a2am.epam_indigo.atom_to_atom_mapping.EpamIndigoAtomToAtomMappingUtilities.map_reaction_smiles`` }.
 
         :returns: The mapped chemical reaction SMILES strings, and the indicators of whether the chemical reaction
-            compound atom-to-atom mapping procedures were completed without errors.
+            compound atom-to-atom mappings were completed without errors.
         """
 
         return pqdm(
             array=reaction_smiles_strings,
             function=partial(
-                EpamIndigoAtomToAtomMapping.map_reaction_smiles,
+                EpamIndigoAtomToAtomMappingUtilities.map_reaction_smiles,
                 **kwargs
             ),
             n_jobs=number_of_cpu_cores,
             total=len(reaction_smiles_strings),
             ncols=150,
             ascii=True,
-            desc="Mapping the chemical reaction SMILES strings using the EPAM Indigo library"
+            desc="Map the chemical reaction SMILES strings (Library: EPAM Indigo | CPU: {0:d})".format(
+                number_of_cpu_cores
+            )
         )
