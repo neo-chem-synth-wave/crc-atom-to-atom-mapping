@@ -41,8 +41,8 @@ python -m scripts.map_reaction_smiles --library "rxnmapper" --reaction_smiles "C
 Currently, the [***crc_a2am***](/crc_a2am) package supports the following open-source chemical reaction compound
 atom-to-atom mapping libraries:
 
-1. The [**Chytorch RxnMap**](https://github.com/chython/chytorch-rxnmap) library utilizes a Transformer model adapted
-   for processing chemical compound graphs. [**[1]**](#References)
+1. The [**Chytorch RxnMap**](https://github.com/chython/chytorch-rxnmap) library utilizes a Transformer model for processing chemical compound graphs.
+   [**[1]**](#References)
 2. The [**EPAM Indigo**](https://github.com/epam/Indigo) library utilizes a chemical compound graph-matching algorithm.
    [**[2]**](#References)
 3. The [**RXNMapper**](https://github.com/rxn4chemistry/rxnmapper) library utilizes a chemically agnostic
