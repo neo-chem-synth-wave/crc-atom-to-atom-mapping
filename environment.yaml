@@ -1,0 +1,18 @@
+name: crc-a2am-env
+
+channels:
+  - conda-forge
+
+dependencies:
+  - importlib_resources
+  - pip
+  - python=3.8
+  - rdkit
+  - tqdm
+  - pip:
+      - chython
+      - chytorch
+      - chytorch-rxnmap
+      - epam.indigo
+      - pqdm
+      - rxnmapper
