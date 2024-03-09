@@ -41,12 +41,12 @@ python -m scripts.map_reaction_smiles --library "rxnmapper" --reaction_smiles "C
 Currently, the [***crc_a2am***](/crc_a2am) package supports the following open-source chemical reaction compound
 atom-to-atom mapping libraries:
 
-1. The [**Chytorch RxnMap**](https://github.com/chython/chytorch-rxnmap) library utilizes a Transformer model for processing chemical compound graphs.
-   [**[1]**](#References)
+1. The [**Chytorch RxnMap**](https://github.com/chython/chytorch-rxnmap) library utilizes a Transformer model for
+   processing chemical compound graphs. [**[1]**](/literature/20220706_nugmanov_et_al.md)
 2. The [**EPAM Indigo**](https://github.com/epam/Indigo) library utilizes a chemical compound graph-matching algorithm.
    [**[2]**](#References)
 3. The [**RXNMapper**](https://github.com/rxn4chemistry/rxnmapper) library utilizes a chemically agnostic
-   attention-guided Transformer model. [**[3]**](#References)
+   attention-guided Transformer model. [**[3]**](/literature/20210407_schwaller_et_al.md)
 
 
 ## License Information
@@ -64,9 +64,9 @@ might be beneficial, please feel free to do so via **GitHub Issues** or **e-mail
 ## References
 
 1. Nugmanov, R., Dyubankova, N., Gedich, A., and Wegner, J.K. **Bidirectional Graphormer for Reactivity Understanding:
-   Neural Network Trained to Reaction Atom-to-Atom Mapping Task**. *J. Chem. Inf. Model., 2022, 62, 14, 3307–3315*.
+   Neural Network Trained to Reaction Atom-to-Atom Mapping Task**. *J. Chem. Inf. Model., 62, 14, 3307–3315, 2022*.
    DOI: https://doi.org/10.1021/acs.jcim.2c00344.
 2. **EPAM Indigo**: https://lifescience.opensource.epam.com/indigo/index.html. Accessed on: March 6th, 2024.
 3. Schwaller, P., Hoover, B., Reymond, J., Strobelt, H., and Laino, T. **Extraction of Organic Chemistry Grammar from
-   Unsupervised Learning of Chemical Reactions**. *Sci. Adv., 2021, 7, 15*. DOI:
+   Unsupervised Learning of Chemical Reactions**. *Sci. Adv., 7, 15, 2021*. DOI:
    https://doi.org/10.1126/sciadv.abe4166.
