@@ -10,8 +10,8 @@ from tqdm.auto import tqdm
 
 class RXNMapperAtomToAtomMappingUtilities:
     """
-    The `RXNMapper <https://www.science.org/doi/10.1126/sciadv.abe4166>`_ library chemical reaction compound
-    atom-to-atom mapping utilities class.
+    The `RXNMapper <https://www.science.org/doi/10.1126/sciadv.abe4166>`_
+    library chemical reaction compound atom-to-atom mapping utilities class.
     """
 
     @staticmethod
@@ -21,16 +21,15 @@ class RXNMapperAtomToAtomMappingUtilities:
             **kwargs
     ) -> Tuple[Optional[str], Optional[float]]:
         """
-        Map a chemical reaction SMILES string using the `RXNMapper <https://github.com/rxn4chemistry/rxnmapper>`_
-        library.
+        Map a chemical reaction SMILES string using the `RXNMapper <https://github.com/rxn4chemistry/rxnmapper>`_ library.
 
         :parameter reaction_smiles: The chemical reaction SMILES string.
         :parameter kwargs: The keyword arguments for the adjustment of the following underlying methods: {
-            ``rxnmapper.core.RXNMapper.get_attention_guided_atom_maps`` }.
+            ``rxnmapper.core.RXNMapper.get_attention_guided_atom_maps``
+        }.
         :parameter custom_logger: The custom logger.
 
-        :returns: The mapped chemical reaction SMILES string, and the chemical reaction compound atom-to-atom mapping
-            score.
+        :returns: The mapped chemical reaction SMILES string, and the chemical reaction compound atom-to-atom mapping score.
         """
 
         try:
@@ -65,17 +64,16 @@ class RXNMapperAtomToAtomMappingUtilities:
             **kwargs
     ) -> Optional[List[Tuple[Optional[str], Optional[float]]]]:
         """
-        Map the chemical reaction SMILES strings using the `RXNMapper <https://github.com/rxn4chemistry/rxnmapper>`_
-        library.
+        Map the chemical reaction SMILES strings using the `RXNMapper <https://github.com/rxn4chemistry/rxnmapper>`_ library.
 
         :parameter reaction_smiles_strings: The chemical reaction SMILES strings.
         :parameter batch_size: The batch size.
         :parameter custom_logger: The custom logger.
         :parameter kwargs: The keyword arguments for the adjustment of the following underlying methods: {
-            ``rxnmapper.core.RXNMapper.get_attention_guided_atom_maps`` }.
+            ``rxnmapper.core.RXNMapper.get_attention_guided_atom_maps``
+        }.
 
-        :returns: The mapped chemical reaction SMILES strings, and the chemical reaction compound atom-to-atom mapping
-            scores.
+        :returns: The mapped chemical reaction SMILES strings, and the chemical reaction compound atom-to-atom mapping scores.
         """
 
         try:
@@ -88,7 +86,7 @@ class RXNMapperAtomToAtomMappingUtilities:
                 total=ceil(len(reaction_smiles_strings) / batch_size),
                 ncols=150,
                 ascii=True,
-                desc="Map the chemical reaction SMILES strings (Library: RXNMapper | Batch Size: {0:d} | GPU: ???)".format(
+                desc="Mapping the chemical reaction SMILES strings (Library: RXNMapper | Batch Size: {0:d} | GPU: ???)".format(
                     batch_size
                 )
             ):

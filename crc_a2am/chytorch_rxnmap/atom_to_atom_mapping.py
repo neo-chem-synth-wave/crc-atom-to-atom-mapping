@@ -22,17 +22,16 @@ class ChytorchRxnMapAtomToAtomMappingUtilities:
             **kwargs
     ) -> Tuple[Optional[str], Optional[float]]:
         """
-        Map a chemical reaction SMILES string using the `Chytorch RxnMap <https://github.com/chython/chytorch-rxnmap>`_
-        library.
+        Map a chemical reaction SMILES string using the `Chytorch RxnMap <https://github.com/chython/chytorch-rxnmap>`_ library.
 
         :parameter reaction_smiles: The chemical reaction SMILES string.
-        :parameter kwargs: The keyword arguments for the adjustment of the following underlying functions and methods:
-            { ``chython.files.daylight.smiles.smiles``, ``chython.algorithms.mapping.attention.Attention.reset_mapping``
-            }.
+        :parameter kwargs: The keyword arguments for the adjustment of the following underlying functions and methods: {
+            ``chython.files.daylight.smiles.smiles``,
+            ``chython.algorithms.mapping.attention.Attention.reset_mapping``
+        }.
         :parameter custom_logger: The custom logger.
 
-        :returns: The mapped chemical reaction SMILES string, and the chemical reaction compound atom-to-atom mapping
-            score.
+        :returns: The mapped chemical reaction SMILES string, and the chemical reaction compound atom-to-atom mapping score.
         """
 
         try:
@@ -69,16 +68,14 @@ class ChytorchRxnMapAtomToAtomMappingUtilities:
             **kwargs
     ) -> List[Tuple[Optional[str], Optional[float]]]:
         """
-        Map the chemical reaction SMILES strings using the
-        `Chytorch RxnMap <https://github.com/chython/chytorch-rxnmap>`_ library.
+        Map the chemical reaction SMILES strings using the `Chytorch RxnMap <https://github.com/chython/chytorch-rxnmap>`_ library.
 
         :parameter reaction_smiles_strings: The chemical reaction SMILES strings.
         :parameter kwargs: The keyword arguments for the adjustment of the following underlying methods: {
             ``crc_a2am.chytorch_rxnmap.atom_to_atom_mapping.ChytorchRxnMapAtomToAtomMappingUtilities.map_reaction_smiles``
-            }.
+        }.
 
-        :returns: The mapped chemical reaction SMILES strings, and the chemical reaction compound atom-to-atom mapping
-            scores.
+        :returns: The mapped chemical reaction SMILES strings, and the chemical reaction compound atom-to-atom mapping scores.
         """
 
         return pqdm(
@@ -91,5 +88,5 @@ class ChytorchRxnMapAtomToAtomMappingUtilities:
             total=len(reaction_smiles_strings),
             ncols=150,
             ascii=True,
-            desc="Map the chemical reaction SMILES strings (Library: Chytorch RxnMap | CPU: ???)"
+            desc="Mapping the chemical reaction SMILES strings (Library: Chytorch RxnMap | CPU: ???)"
         )
